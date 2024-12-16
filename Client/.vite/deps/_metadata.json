@@ -1,0 +1,103 @@
+{
+  "hash": "05fc1909",
+  "configHash": "174851d0",
+  "lockfileHash": "3c17d11f",
+  "browserHash": "d614507a",
+  "optimized": {
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "69d6213f",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "35bb6736",
+      "needsInterop": false
+    },
+    "firebase/auth": {
+      "src": "../../node_modules/firebase/auth/dist/esm/index.esm.js",
+      "file": "firebase_auth.js",
+      "fileHash": "f9bc1e6a",
+      "needsInterop": false
+    },
+    "lottie-react": {
+      "src": "../../node_modules/lottie-react/build/index.es.js",
+      "file": "lottie-react.js",
+      "fileHash": "386e14d5",
+      "needsInterop": false
+    },
+    "motion": {
+      "src": "../../node_modules/motion/dist/es/motion/lib/index.mjs",
+      "file": "motion.js",
+      "fileHash": "c89d16ea",
+      "needsInterop": false
+    },
+    "motion/react": {
+      "src": "../../node_modules/motion/dist/es/motion/lib/react.mjs",
+      "file": "motion_react.js",
+      "fileHash": "96d55102",
+      "needsInterop": false
+    },
+    "motion/react-client": {
+      "src": "../../node_modules/motion/dist/es/motion/lib/react-client.mjs",
+      "file": "motion_react-client.js",
+      "fileHash": "22bb46cc",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "687a83e2",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "e00e2315",
+      "needsInterop": true
+    },
+    "react-icons/fa6": {
+      "src": "../../node_modules/react-icons/fa6/index.mjs",
+      "file": "react-icons_fa6.js",
+      "fileHash": "23c25f0f",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "91c515f4",
+      "needsInterop": false
+    },
+    "sweetalert2": {
+      "src": "../../node_modules/sweetalert2/dist/sweetalert2.esm.all.js",
+      "file": "sweetalert2.js",
+      "fileHash": "e4c602b2",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-UP6LQVYV": {
+      "file": "chunk-UP6LQVYV.js"
+    },
+    "chunk-XHCPM5DQ": {
+      "file": "chunk-XHCPM5DQ.js"
+    },
+    "chunk-MC6OJG2U": {
+      "file": "chunk-MC6OJG2U.js"
+    },
+    "chunk-MQFN3B4H": {
+      "file": "chunk-MQFN3B4H.js"
+    },
+    "chunk-2YHJMOYV": {
+      "file": "chunk-2YHJMOYV.js"
+    },
+    "chunk-TWJRYSII": {
+      "file": "chunk-TWJRYSII.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
+}
