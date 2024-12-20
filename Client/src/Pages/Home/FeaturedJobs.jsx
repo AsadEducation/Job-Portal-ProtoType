@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import Jobcard from "./Jobcard";
-
+import axios from "axios";
 
 const FeaturedJobs = () => {
 
     const [jobs,setJobs]= useState([]);
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/jobs`)
-        .then(res=>res.json())
-        .then(data=>setJobs(data))
+        axios.get(`http://localhost:5000/jobs`,{withCredentials:true})
+        .then(data=>setJobs(data.data))
     },[]);
 
     return (

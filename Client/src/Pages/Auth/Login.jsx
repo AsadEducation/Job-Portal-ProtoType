@@ -3,15 +3,16 @@ import loginAnimation from '../../assets/Lottie/animation-login.json'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import axios from "axios";
 
 
 
 
 const Login = () => {
 
-    const {loginUser}= useContext(AuthContext);
+    const { loginUser } = useContext(AuthContext);
 
-    const {state} = useLocation();
+    const { state } = useLocation();
     const navigate = useNavigate();
 
     const redirect = state || '/';
@@ -29,15 +30,19 @@ const Login = () => {
 
         // console.log(email, password);
 
-        loginUser(email,password)
-        .then(result =>{
-           navigate(redirect);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
+        loginUser(email, password)
+            .then(result => {
 
-    
+                axios.post(`http://localhost:5000/jwt`, { email },{withCredentials:true})
+                    .then(data => console.log(data));
+
+                navigate(redirect);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
+
 
     }
 

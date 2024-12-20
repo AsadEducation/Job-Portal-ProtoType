@@ -1,10 +1,45 @@
+import axios from "axios";
+import { useAuth } from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddJob = () => {
+
+    const {user}=useAuth();
+    const navigate= useNavigate();
+    // console.log(user);
+
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const temp = formData.entries();
+        const initialData = Object.fromEntries(temp);
+        // console.log(initialData);
+
+        const {min,max,currency,...newJob}= initialData;
+        newJob.salaryRange = {min,max,currency};
+        
+        newJob.requirements= newJob.requirements.split('\n');
+        newJob.responsibilities= newJob.responsibilities.split('\n');
+
+        axios.post(`http://localhost:5000/add-new-job-form`,newJob)
+        .then(data=>{
+            if(data.data.insertedId){
+                Swal.fire({
+                    icon:'success',
+                    title:'Successfully Applied',
+                })
+                navigate('/my-posted-jobs');
+            }
+        })
+        .catch(err=>console.log(err));
+    }
     return (
         <div>
             <div className="lg:w-[50%] mx-auto">
                 <h2 className="text-5xl font-bold text-center">Post a new Job</h2>
-                <form className="card-body">
+                <form onSubmit={handleFormSubmit} className="card-body">
                     {/* Job title */}
                     <div className="form-control">
                         <label className="label">
@@ -105,7 +140,7 @@ const AddJob = () => {
                         <label className="label">
                             <span className="label-text">HR Email</span>
                         </label>
-                        <input type="text"  name='hr_email' placeholder="HR Email" className="input input-bordered" required />
+                        <input type="text" defaultValue={user?.email} name='hr_email' placeholder="HR Email" className="input text-blue-400 input-bordered" required />
                     </div>
                     {/* application Deadline */}
                     <div className="form-control">
